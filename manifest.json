@@ -4,7 +4,11 @@
   "version": "1.0",
   "description": "A powerful JSON parser that can handle multiple JSON objects in one string.",
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": "icon.svg"
+  },
+  "icons": {
+    "128": "icon.svg"
   },
   "permissions": ["storage"]
 }
