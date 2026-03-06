@@ -39,6 +39,21 @@ body {
   box-sizing: border-box;
   padding: 10px;
   background-color: #fff;
+  min-height: 200px;
+}
+
+.standalone-body .header-controls #open-standalone,
+.standalone-body .header-controls .setting-item {
+  display: none;
+}
+
+.pin-hint {
+  font-size: 11px;
+  color: #999;
+  text-align: center;
+  margin-top: 5px;
+  padding: 4px;
+  border-top: 1px solid #eee;
 }
 
 .header-controls {

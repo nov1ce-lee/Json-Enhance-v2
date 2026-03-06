@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
   // Check if we're already in a standalone window
   const isStandalone = new URLSearchParams(window.location.search).get('mode') === 'standalone';
 
+  if (isStandalone) {
+    document.body.classList.add('standalone-body');
+  }
+
   // Load settings
   chrome.storage.local.get(['alwaysStandalone'], (result) => {
     if (result.alwaysStandalone) {
@@ -30,13 +34,17 @@ document.addEventListener('DOMContentLoaded', function () {
     chrome.windows.create({
       url: chrome.runtime.getURL('popup.html?mode=standalone'),
       type: 'popup',
-      width: 600,
-      height: 700,
+      width: 650,
+      height: 750,
       focused: true
-    }, () => {
-      // Close the current popup after opening the standalone window
+    }, (windowObj) => {
+      if (chrome.runtime.lastError) {
+        console.error('Failed to create window:', chrome.runtime.lastError);
+        return;
+      }
+      // Only close if we are sure the new window is opening
       if (!isStandalone) {
-        setTimeout(() => window.close(), 100);
+        setTimeout(() => window.close(), 200);
       }
     });
   }
