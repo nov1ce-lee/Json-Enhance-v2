@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
       alwaysStandaloneCheck.checked = true;
       if (!isStandalone) {
         openStandaloneWindow();
-        window.close();
       }
     }
   });
@@ -31,8 +30,14 @@ document.addEventListener('DOMContentLoaded', function () {
     chrome.windows.create({
       url: chrome.runtime.getURL('popup.html?mode=standalone'),
       type: 'popup',
-      width: 500,
-      height: 600
+      width: 600,
+      height: 700,
+      focused: true
+    }, () => {
+      // Close the current popup after opening the standalone window
+      if (!isStandalone) {
+        setTimeout(() => window.close(), 100);
+      }
     });
   }
 
