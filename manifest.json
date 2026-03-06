@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "JSON Enhance",
+  "version": "1.0",
+  "description": "A powerful JSON parser that can handle multiple JSON objects in one string.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage"]
+}
