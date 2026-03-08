@@ -1,0 +1,54 @@
+.json-enhance-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background-color: #007BFF;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  user-select: none;
+  border: 2px solid white;
+}
+
+.json-enhance-fab:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  background-color: #0056b3;
+}
+
+.json-enhance-fab:active {
+  transform: scale(0.95);
+}
+
+.json-enhance-fab svg {
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.json-enhance-fab .tooltip {
+  position: absolute;
+  right: 55px;
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s;
+  pointer-events: none;
+}
+
+.json-enhance-fab:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
